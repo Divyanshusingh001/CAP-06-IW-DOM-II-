@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        padding-bottom: 200px;
+        background-color: black;
+       }
+       H2{
+        padding-top: 50px;
+        text-shadow: 2px 4px 8px red;
+        color: aliceblue;
+       }
+        #perent {
+            background-color: rgb(215, 83, 208);
+            box-shadow: rgba(102, 219, 235, 0.374) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+              height: 450px;
+              width: 350px;
+              padding: 10px;
+              margin-top: 40px;
+              margin-left: 460px;
+        }
+        #perent :hover{
+            color: red;
+            box-shadow: rgba(18, 18, 18, 0.619) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+         #perent > #cal {
+            padding-top: 10px;
+            padding-left: 45px;
+            text-shadow: rgba(100, 100, 111, 0.2) 5px 7px 29px 10px;
+            font-size: 30px;
+            margin-top: 20px;
+            margin-left: 34px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            height: 70px;
+            width: 68%;
+        }
+      
+        #perent > div:last-child {
+            
+            display: grid;
+            grid-template-columns: repeat( 4 , 1fr);
+            gap: 10px;
+            height: 300px;
+            margin-left: 30px;
+            margin-top: 15px;
+            width: 280px; 
+            padding: 7px;
+        }
+        #perent > div:last-child > div {
+            box-shadow: rgba(65, 65, 208, 0.674) 0px 7px 29px 0px;
+            padding-top: 25px;
+            padding-left: 25px;  
+        }
+        #perent > div:last-child > div:hover{
+            font-size: 25px;
+            box-shadow: rgba(47, 222, 28, 0.568) 0px 7px 29px 0px;
+        }
+        #cap {
+            background-color: red;
+            color: white;
+        }
+        #cap:hover {
+            background-color: red;
+            color: rgb(12, 12, 12);
+        }
+        #pilas {
+            color: white;
+            background-color: black;
+        }
+         #inputbox{
+               padding: 15px;
+         }
+
+    </style>
+</head>
+<body>
+    <marquee> <H2>😎DIVYANSHU SINGH CHANDEL😎</H2></marquee>
+    <div id="perent"> 
+        <div id="cal" ><input id="inputbox" type="text" placeholder="😛MASAI😛"></div>
+            <div>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button id="pilas">+</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button id="pilas">-</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button id="pilas">x</button>
+                <button id="cap">c</button>
+                <button>0</dbutton>
+                <button id="pilas">=</button>
+                <button id="pilas">/</button>
+            </div>  
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputBox = document.getElementById('inputbox');
+            const buttons = document.querySelectorAll('#perent button');
+    
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = button.innerText;
+                    if (buttonText === 'c') {
+                        inputBox.value = '';
+                    } else if (buttonText === '=') {
+                        try {
+                            inputBox.value = eval(inputBox.value);
+                        } catch (error) {
+                            inputBox.value = 'Error';
+                        }
+                    } else {
+                        inputBox.value += buttonText;
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
+
+
+
+
